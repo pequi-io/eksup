@@ -1,0 +1,6 @@
+aws:
+  auth:
+    credentials: true
+    profile: false
+    profileName: sso_profile
+  region: us-east-1

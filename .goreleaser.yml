@@ -1,0 +1,17 @@
+before:
+  hooks:
+    - go mod download
+builds:
+  - id: eksup
+    binary: eksup
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - darwin
+      - windows
+    goarch:
+      - amd64
+      - arm64
+    goarm:
+      - "7"
