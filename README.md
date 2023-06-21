@@ -2,16 +2,33 @@
   <img src="logo.png" alt="eksup"/>
 </p>
 
-eksup is a tool to help DevOps Engineers/Platform Engineers/SREs (you name it!) upgrade EKS clusters.
-
-## What is it?
-
-With eksup you can list and check for newer versions of addons and Kubernetes versions supported by EKS.
+eksup is a tool to help DevOps Engineers/Platform Engineers/SREs (you name it!) upgrade EKS clusters. With eksup you can list and check for newer versions of addons and Kubernetes versions supported by EKS.
 
 ## Getting started
 
 - Download the latest release from the [releases page](https://github.com/pequi-io/eksup/releases) and extract the binary.
 - Run `./eksup init` to create a new config file and then configure it with your AWS credentials or SSO profile name. You can't use both at the same time.
+
+### Example config file
+
+```yaml
+# With profile
+aws:
+  auth:
+    profile: true
+    profileName: my_sso_profile_name
+  region: us-east-1
+```
+
+```yaml
+# With default credentials
+aws:
+  auth:
+    # Use the default credentials
+    credentials: true
+  region: us-east-1
+```
+## What does it do?
 
 ### Listing addons
 
